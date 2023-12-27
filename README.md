@@ -32,7 +32,7 @@ Developed By: EASWAR R
 Register No: 23012868
 
 import math       
-arr_time=float(input("Enter the mean inter arrival time of objects from Feeder (in sec ser_time-float(input("Enter the mean inter service time of Lathe Machine (in secs): Robot_time=float(input("Enter the Additional time taken for the Robot (in secs): ")) c=int(input("Number of service centre: "))      
+arr_time=float(input("Enter the mean inter arrival time of objects from Feeder (in sec ser_time-float(input("Enter the mean inter service time of Lathe Machine (in secs): Robot_time=float(input("Enter the Additional time taken for the Robot (in secs):  ")) c=int(input("Number of service centre:  "))      
 lam=1/arr_time       
 mu=1/(ser_time+Robot_time)       
 print("-----------------------------------------------------------------------------------")      

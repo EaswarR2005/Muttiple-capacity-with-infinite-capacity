@@ -18,12 +18,69 @@ Queuing are the most frequently encountered problems in everyday life. For examp
 
 
 ## Experiment:
+![2](https://github.com/EaswarR2005/Muttiple-capacity-with-infinite-capacity/assets/146931525/7911aa1a-3a0b-4ac7-8e7f-673b66dae373)    
+
+
+
+
+![Screenshot 2023-12-27 224256](https://github.com/EaswarR2005/Muttiple-capacity-with-infinite-capacity/assets/146931525/4394d498-4534-4865-92fd-38cdce2d8212)
+
 
 
 ## Program
+Developed By: EASWAR R    
+Register No: 23012868
 
+import math       
+arr_time=float(input("Enter the mean inter arrival time of objects from Feeder (in sec ser_time-float(input("Enter the mean inter service time of Lathe Machine (in secs): Robot_time=float(input("Enter the Additional time taken for the Robot (in secs): ")) c=int(input("Number of service centre: "))      
+lam=1/arr_time       
+mu=1/(ser_time+Robot_time)       
+print("-----------------------------------------------------------------------------------")      
+print("Multiple Server with Infinite Capacity - (M/M/c): (oo/FIFO)")     
+print("-----------------------------------------------------------------------------------")      
+print("The mean arrival rate per second : %0.2f "%lam)     
+print("The mean service rate per second : %0.2f "%mu)    
+rho=lam/(c*mu)      
+sum=(lam/mu)**c*(1/(1-rho))/math.factorial(c)      
+for i in range(0,c):       
 
+     sum=sum+(lam/mu)**1/math.factorial(i)   
+P0=1/sum
+if (rho<1):
+
+     Lq=(P0/math.factorial(c))*(1/c)*(lam/mu)**(c+1)/(1-rho)**2   
+     Ls=Lq+lam/mu   
+     Ws=Ls/lam             
+     Wq=Lq/lam      
+    print("Average number of objects in the system: %0.2f "%Ls)        
+    print("Average number of objects in the conveyor: %0.2f "%Lq)     
+    print("Average waiting time of an object in the system : %0.2f secs"%Ws)     
+    print("Average waiting time of an object in the conveyor: %0.2f secs"%Wq)     
+    print("Probability that the system is busy: %0.2f "%(rho))    
+    print("Probability that the system is empty: %0.2f "%(1-rho))   
+else:
+
+    print("Warning! Objects Over flow will happen in the conveyor")    
+print("-------------------------------------------------------------------------------------")
 ## Output :
+
+Enter the mean inter arrival time of objects from Feeder (in secs): 10        
+Enter the mean inter service time of Lathe Machine (in secs): 1     
+Enter the Additional time taken for the Robot (in secs): 7     
+Number of service centre: 2   
+----------------------------------------------------------
+Multiple Server with Infinite Capacity (M/M/c): (00/FIFO)
+----------------------------------------------------------
+The mean arrival rate per second: 0.10      
+The mean service rate per second: 0.12       
+Average number of objects in the system: 0.95      
+Average number of objects in the conveyor: 0.15      
+Average waiting time of an object in the system: 9.52 secs      
+Average waiting time of an object in the conveyor: 1.52 secs       
+Probability that the system is busy: 0.40      
+Probability that the system is empty: 0.60      
+-----------------------------------------------------------
 
 ## Result : 
 
+Thus the average number of materials in the system and conveyor, waiting time of each material in the system and conveyor is found successfully.
